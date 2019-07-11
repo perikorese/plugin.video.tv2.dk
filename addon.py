@@ -92,7 +92,7 @@ def playVideo(url):
         # strip namespaces
         smil = re.sub('xmlns=[^>]+', '', response)
         doc = ET.fromstring(smil)
-        src = doc.find('body/seq/switch/video').get('src')
+        src = doc.find('body/seq/video').get('src')
 
     item = xbmcgui.ListItem(path=src)
     xbmcplugin.setResolvedUrl(HANDLE, True, item)
